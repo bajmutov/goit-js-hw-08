@@ -10,9 +10,6 @@ filterForm.addEventListener('input', throttle((onFormInput),500));
 filterForm.addEventListener('submit', onFormSubmit);
 
 function onFormInput(evt) {
-    const message = evt.target.value;
-    console.log(message);
-    
     let localText = localStorage.getItem(STORAGE_KEY);
     localText = localText ? JSON.parse(localText) : {};
     localText[evt.target.name] = evt.target.value;
