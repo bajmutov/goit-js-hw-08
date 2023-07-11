@@ -31,11 +31,13 @@ function initFotm() {
 
 function onFormSubmit(evt) {
     evt.preventDefault();
-    const { email, message } = evt.currentTarget.elements;
-    const values = {
-        email: email.value,
-        message: message.value,
-    }
+    // const { email, message } = evt.currentTarget.elements;
+    // const values = {
+    //     email: email.value,
+    //     message: message.value,
+    // }
+    const formData = new FormData(filterForm);
+    const values = Object.fromEntries(formData.entries())
     console.log(values);
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
