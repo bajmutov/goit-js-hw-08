@@ -35,7 +35,12 @@ function onFormSubmit(evt) {
     // }
     const formData = new FormData(filterForm);
     const values = Object.fromEntries(formData.entries())
+
+     if (values.email === "" || values.message === "") {
+    alert("Please fill in all the fields!");
+    } else {
     console.log(values);
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
+ }  
 }
